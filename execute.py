@@ -28,8 +28,8 @@ def test_settings_config():
 
 
 def execute():
-    if not test_settings_config():
-        return
+    # if not test_settings_config():
+    #     return
 
     ans = input("Running locally or {} (l/{})? ".format(bold_text("remote"), bold_text("r")))
     env = "remote"

@@ -4,9 +4,9 @@ echo $1
 gcloud ml-engine local train \
 --module-name trainer.task \
 --package-path trainer/ \
---job-dir $MILDNET_JOB_DIR$model_name \
+--job-dir 'output/mildnet' \
 -- \
---data-path=$MILDNET_DATA_PATH \
+--data-path='dataset/tops' \
 --model-id=$model_id \
 --loss=$loss \
 --optimizer=$optimizer \

@@ -1,16 +1,5 @@
 source settings.cfg
 source $1
 echo $1
-gcloud ml-engine local train \
---module-name trainer.task \
---package-path trainer/ \
---job-dir 'output/mildnet' \
--- \
---data-path='dataset/tops' \
---model-id=$model_id \
---loss=$loss \
---optimizer=$optimizer \
---train-csv=$train_csv \
---val-csv=$val_csv \
---train-epocs=$train_epocs \
---lr=$lr
+
+python execute.py --job-dir=output --data-path=dataset/ --optimizer=mo --model-id=ranknet --weights-path=None --loss=contrastive_loss --train-csv=tops_val_full.csv  --val-csv=tops_val_full.csv --batch-size=16 --train-epocs=30 --lr=0.001 --hyperdash-key=SQ2PTO0EsRQRXldNDT3+hmjV2/rSKnBViePQaE8A4f
